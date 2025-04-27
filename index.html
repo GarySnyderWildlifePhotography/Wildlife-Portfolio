@@ -15,44 +15,179 @@
     body { margin: 0; font-family: 'Merriweather', serif; background: #f1f3f0; color: #2c3e50; line-height: 1.6; opacity: 0; transition: opacity 1.5s ease; }
     body.loaded { opacity: 1; }
 
-    .topbar { background: #f5efe6; padding: 0.5rem 2rem; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .topbar img { max-height: 80px; width: auto; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 1.5s ease, transform 1.5s ease; }
-    .topbar img.loaded { opacity: 1; transform: translateY(0) scale(1); }
-    .topbar img:hover { transform: rotate(-5deg) scale(1.05); transition: transform 0.5s ease; }
-    .topbar nav { display: flex; gap: 2rem; }
-    .topbar nav a { color: #264d3c; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
-    .topbar nav a:hover { color: #a7c957; }
-    .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: #264d3c; }
+    .topbar {
+      background: #f5efe6;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .topbar img {
+      max-height: 70px;
+      width: auto;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+
+    .topbar img.loaded {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .topbar nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .topbar nav a {
+      color: #264d3c;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .topbar nav a:hover {
+      color: #a7c957;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #264d3c;
+    }
 
     @media (max-width: 768px) {
-      .topbar nav { display: none; flex-direction: column; background: #ffffff; position: absolute; top: 80px; right: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+      .topbar nav {
+        display: none;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
       .topbar nav.show { display: flex; }
       .menu-toggle { display: block; }
     }
 
-    header { background: url('images/Eaglesoaring.jpg') no-repeat center center/cover; height: 110vh; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 0 5%; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); background-attachment: fixed; position: relative; animation: zoomBackground 10s ease-out forwards; }
+    header {
+      background: url('images/Eaglesoaring.jpg') no-repeat center center/cover;
+      height: 110vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 0 5%;
+      color: white;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      background-attachment: fixed;
+      position: relative;
+      animation: zoomBackground 10s ease-out forwards;
+    }
+
     @keyframes zoomBackground { from { background-size: 100%; } to { background-size: 110%; } }
-    @keyframes textFadeIn { to { opacity: 1; transform: translateY(0); } }
-    header h1, header p { opacity: 0; transform: translateY(30px); animation: textFadeIn 2s ease forwards; }
+
+    header h1, header p {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: textFadeIn 2s ease forwards;
+    }
+
     header h1 { animation-delay: 1s; }
     header p { animation-delay: 2s; font-family: 'Great Vibes', cursive; font-size: 2.5rem; }
 
-    .scroll-down { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 2.5rem; color: #000; animation: smoothBounce 3s ease-in-out infinite; transition: opacity 0.5s ease; }
+    @keyframes textFadeIn { to { opacity: 1; transform: translateY(0); } }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      color: #000;
+      animation: smoothBounce 3s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+
     .scroll-down.hide { opacity: 0; pointer-events: none; }
-    @keyframes smoothBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
+
+    @keyframes smoothBounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
 
     section { max-width: 1100px; margin: 4rem auto; padding: 0 20px; text-align: center; }
-    #story, #gallery, #contact { text-align: center; }
-    h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #264d3c; border-bottom: 2px solid #a7c957; display: inline-block; padding-bottom: 5px; }
 
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 3rem 8%; }
-    .gallery a img { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease, filter 0.5s ease, box-shadow 0.5s ease; }
-    .gallery a.visible img { opacity: 1; transform: translateY(0); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); }
-    .gallery a:hover img { transform: scale(1.05); filter: brightness(1.1) contrast(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 1rem;
+      color: #264d3c;
+      border-bottom: 2px solid #a7c957;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 3rem 8%;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .gallery a img {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .gallery a.visible img {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.05);
+      filter: brightness(1.1) contrast(1.1);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
 
     .contact-info { font-size: 1.2rem; margin-top: 1rem; }
-    footer { background: #264d3c; color: #f1f3f0; text-align: center; padding: 1rem 0; font-size: 0.9rem; margin-top: 3rem; opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
-    footer.visible { opacity: 1; transform: translateY(0); }
+
+    footer {
+      background: #264d3c;
+      color: #f1f3f0;
+      text-align: center;
+      padding: 1rem 0;
+      font-size: 0.9rem;
+      margin-top: 3rem;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    footer.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
 
@@ -76,8 +211,8 @@
 
 <section id="story">
   <h2>My Story</h2>
-  <p class="story">
-    As a kid, nature was everything. I wandered creeks, built dams, and watched animals with wide-eyed wonder. Over time, life got busier, and the wild places faded into the background.<br><br>
+  <p>
+    As a kid, nature was everything. I wandered creeks, built dams, and watched animals with wide-eyed wonder.<br><br>
     Wildlife photography brought it all back.<br><br>
     Through my lens, I reconnect with the raw beauty of the world — the honesty of an eagle's flight, the quiet resilience of a deer at dawn, the delicate power of a bear in a river.<br><br>
     I didn't outgrow that wild spirit. I grew back into it.
@@ -123,18 +258,34 @@
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <script>
-function toggleMenu() { const nav = document.getElementById('nav-links'); nav.classList.toggle('show'); }
-window.addEventListener('load', () => { document.body.classList.add('loaded'); document.querySelector('.topbar img').classList.add('loaded'); });
+function toggleMenu() {
+  const nav = document.getElementById('nav-links');
+  nav.classList.toggle('show');
+}
+
+window.addEventListener('load', () => {
+  document.body.classList.add('loaded');
+  document.querySelector('.topbar img').classList.add('loaded');
+});
+
 window.addEventListener('scroll', () => {
-const scrollDownArrow = document.querySelector('.scroll-down');
-if (window.scrollY > 50) { scrollDownArrow.classList.add('hide'); } else { scrollDownArrow.classList.remove('hide'); }
-const footer = document.getElementById('footer');
-const footerRect = footer.getBoundingClientRect();
-if (footerRect.top < window.innerHeight) { footer.classList.add('visible'); }
+  const scrollDownArrow = document.querySelector('.scroll-down');
+  if (window.scrollY > 50) {
+    scrollDownArrow.classList.add('hide');
+  } else {
+    scrollDownArrow.classList.remove('hide');
+  }
+
+  const footer = document.getElementById('footer');
+  const footerRect = footer.getBoundingClientRect();
+  if (footerRect.top < window.innerHeight) {
+    footer.classList.add('visible');
+  }
 });
 </script>
 
 </body>
 </html>
+
 
 
