@@ -40,6 +40,19 @@
     .topbar img {
       max-height: 80px;
       width: auto;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+
+    .topbar img.loaded {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .topbar img:hover {
+      transform: rotate(-5deg) scale(1.05);
+      transition: transform 0.5s ease;
     }
 
     .topbar nav {
@@ -263,6 +276,7 @@
 
   window.addEventListener('load', () => {
     document.body.classList.add('loaded');
+    document.querySelector('.topbar img').classList.add('loaded');
   });
 
   window.addEventListener('scroll', () => {
