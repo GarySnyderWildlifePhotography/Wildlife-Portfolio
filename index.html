@@ -248,11 +248,64 @@
 
 <section id="gallery">
   <h2>Gallery</h2>
-  <div class="gallery">
-    <a href="images/capesanblasmilkyway.jpg" data-lightbox="wildlife" data-title="Whispers of the Universe"><img src="images/capesanblasmilkyway.jpg" alt="Whispers of the Universe" loading="lazy"></a>
-  </div>
-</section>
+  <div class="gallery" style="gap: 40px; padding: 3rem 5%;">
+    <style>
+      .gallery a img {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 1s ease, transform 1s ease, filter 0.5s ease, box-shadow 0.5s ease;
+      }
 
+      .gallery a.visible img {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .gallery a:hover img {
+        transform: scale(1.05);
+        filter: brightness(1.1) contrast(1.1);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+
+    <a href="images/capesanblasmilkyway.jpg" data-lightbox="wildlife" data-title="Whispers of the Universe"><img src="images/capesanblasmilkyway.jpg" alt="Whispers of the Universe" loading="lazy"></a>
+    <a href="images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch"><img src="images/deergazingatsunrise.jpg" alt="Morning Watch" loading="lazy"></a>
+    <a href="images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith"><img src="images/deertakingoff.jpg" alt="Leap of Faith" loading="lazy"></a>
+    <a href="images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer"><img src="images/deerinmeadow.jpg" alt="Golden Wanderer" loading="lazy"></a>
+    <a href="images/doe.jpg" data-lightbox="wildlife" data-title="Curious Soul"><img src="images/doe.jpg" alt="Curious Soul" loading="lazy"></a>
+    <a href="images/eagleperched.jpg" data-lightbox="wildlife" data-title="Noble Watcher"><img src="images/eagleperched.jpg" alt="Noble Watcher" loading="lazy"></a>
+    <a href="images/Eaglesoaringwm.jpg" data-lightbox="wildlife" data-title="Soaring the Blue"><img src="images/Eaglesoaringwm.jpg" alt="Soaring the Blue" loading="lazy"></a>
+    <a href="images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth"><img src="images/juvenileeagletakingoff.jpg" alt="Wings of Youth" loading="lazy"></a>
+    <a href="images/juvenileeaglesoaring.jpg" data-lightbox="wildlife" data-title="Young Flight"><img src="images/juvenileeaglesoaring.jpg" alt="Young Flight" loading="lazy"></a>
+    <a href="images/barredowl.jpg" data-lightbox="wildlife" data-title="Mystery in the Pines"><img src="images/barredowl.jpg" alt="Mystery in the Pines" loading="lazy"></a>
+    <a href="images/barredinblack.jpg" data-lightbox="wildlife" data-title="Ghost on the Branch"><img src="images/barredinblack.jpg" alt="Ghost on the Branch" loading="lazy"></a>
+    <a href="images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel"><img src="images/redshoulder.jpg" alt="Forest Sentinel" loading="lazy"></a>
+    <a href="images/red.jpg" data-lightbox="wildlife" data-title="Red in the Rain"><img src="images/red.jpg" alt="Red in the Rain" loading="lazy"></a>
+    <a href="images/yellow.jpg" data-lightbox="wildlife" data-title="Golden Whisper"><img src="images/yellow.jpg" alt="Golden Whisper" loading="lazy"></a>
+    <a href="images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flight of Sunshine"><img src="images/splashofyellow.jpg" alt="Flight of Sunshine" loading="lazy"></a>
+    <a href="images/blue.jpg" data-lightbox="wildlife" data-title="Song of the Woods"><img src="images/blue.jpg" alt="Song of the Woods" loading="lazy"></a>
+    <a href="images/gullinsand.jpg" data-lightbox="wildlife" data-title="Saltwater Secrets"><img src="images/gullinsand.jpg" alt="Saltwater Secrets" loading="lazy"></a>
+    <a href="images/solocrab.jpg" data-lightbox="wildlife" data-title="Tiny Titan"><img src="images/solocrab.jpg" alt="Tiny Titan" loading="lazy"></a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.gallery a').forEach(img => {
+        observer.observe(img);
+      });
+    });
+  </script>
+</section>
 <section id="contact">
   <h2>Contact</h2>
   <p class="contact-info">
