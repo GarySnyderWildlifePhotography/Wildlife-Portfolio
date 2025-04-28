@@ -35,15 +35,9 @@
       transition: opacity 1.5s ease, transform 1.5s ease;
     }
 
-    .topbar img.loaded {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
+    .topbar img.loaded { opacity: 1; transform: translateY(0) scale(1); }
 
-    .topbar nav {
-      display: flex;
-      gap: 2rem;
-    }
+    .topbar nav { display: flex; gap: 2rem; }
 
     .topbar nav a {
       color: #264d3c;
@@ -55,28 +49,12 @@
       transition: color 0.3s ease;
     }
 
-    .topbar nav a:hover {
-      color: #a7c957;
-    }
+    .topbar nav a:hover { color: #a7c957; }
 
-    .menu-toggle {
-      display: none;
-      font-size: 2rem;
-      cursor: pointer;
-      color: #264d3c;
-    }
+    .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: #264d3c; }
 
     @media (max-width: 768px) {
-      .topbar nav {
-        display: none;
-        flex-direction: column;
-        background: #f5efe6;
-        position: absolute;
-        top: 80px;
-        right: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      }
+      .topbar nav { display: none; flex-direction: column; background: #f5efe6; position: absolute; top: 80px; right: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
       .topbar nav.show { display: flex; }
       .menu-toggle { display: block; }
     }
@@ -98,12 +76,7 @@
 
     @keyframes zoomBackground { from { background-size: 100%; } to { background-size: 110%; } }
 
-    .header-text {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      margin-top: 2rem;
-    }
+    .header-text { display: flex; flex-direction: column; align-items: flex-start; margin-top: 2rem; }
 
     .name-highlight {
       background: #FFF3B0;
@@ -118,11 +91,7 @@
       text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
     }
 
-    header p {
-      font-family: 'Great Vibes', cursive;
-      font-size: 2.5rem;
-      margin-top: 1rem;
-    }
+    header p { font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-top: 1rem; }
 
     .scroll-down {
       position: absolute;
@@ -168,22 +137,9 @@
       transition: transform 0.5s ease, box-shadow 0.5s ease;
     }
 
-    .gallery a img {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
-    .gallery a.visible img {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .gallery a:hover img {
-      transform: scale(1.05);
-      filter: brightness(1.1) contrast(1.1);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
+    .gallery a img { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
+    .gallery a.visible img { opacity: 1; transform: translateY(0); }
+    .gallery a:hover img { transform: scale(1.05); filter: brightness(1.1) contrast(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
 
     .contact-info { font-size: 1.2rem; margin-top: 1rem; }
 
@@ -199,30 +155,13 @@
       transition: opacity 1s ease, transform 1s ease;
     }
 
-    footer.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    footer.visible { opacity: 1; transform: translateY(0); }
 
     @media (max-width: 768px) {
-      header {
-        align-items: center;
-        text-align: center;
-        padding: 15% 5%;
-      }
-
-      .header-text {
-        align-items: center;
-        margin-top: 3rem;
-      }
-
-      .name-highlight {
-        font-size: 3rem;
-      }
-
-      header p {
-        font-size: 2rem;
-      }
+      header { align-items: center; text-align: center; padding: 15% 5%; }
+      .header-text { align-items: center; margin-top: 3rem; }
+      .name-highlight { font-size: 3rem; }
+      header p { font-size: 2rem; }
     }
   </style>
 </head>
@@ -261,24 +200,25 @@
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <a href="/Wildlife-Portfolio/images/capesanblasmilkyway.jpg" data-lightbox="wildlife" data-title="Whispers of the Universe"><img src="/Wildlife-Portfolio/images/capesanblasmilkyway.jpg" alt="Whispers of the Universe"></a>
-    <a href="/Wildlife-Portfolio/images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch"><img src="/Wildlife-Portfolio/images/deergazingatsunrise.jpg" alt="Morning Watch"></a>
-    <a href="/Wildlife-Portfolio/images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith"><img src="/Wildlife-Portfolio/images/deertakingoff.jpg" alt="Leap of Faith"></a>
-    <a href="/Wildlife-Portfolio/images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer"><img src="/Wildlife-Portfolio/images/deerinmeadow.jpg" alt="Golden Wanderer"></a>
-    <a href="/Wildlife-Portfolio/images/doe.jpg" data-lightbox="wildlife" data-title="Curious Soul"><img src="/Wildlife-Portfolio/images/doe.jpg" alt="Curious Soul"></a>
-    <a href="/Wildlife-Portfolio/images/eagleperched.jpg" data-lightbox="wildlife" data-title="Noble Watcher"><img src="/Wildlife-Portfolio/images/eagleperched.jpg" alt="Noble Watcher"></a>
-    <a href="/Wildlife-Portfolio/images/Eaglesoaringwm.jpg" data-lightbox="wildlife" data-title="Soaring the Blue"><img src="/Wildlife-Portfolio/images/Eaglesoaringwm.jpg" alt="Soaring the Blue"></a>
-    <a href="/Wildlife-Portfolio/images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth"><img src="/Wildlife-Portfolio/images/juvenileeagletakingoff.jpg" alt="Wings of Youth"></a>
-    <a href="/Wildlife-Portfolio/images/juvenileeaglesoaring.jpg" data-lightbox="wildlife" data-title="Young Flight"><img src="/Wildlife-Portfolio/images/juvenileeaglesoaring.jpg" alt="Young Flight"></a>
-    <a href="/Wildlife-Portfolio/images/barredowl.jpg" data-lightbox="wildlife" data-title="Mystery in the Pines"><img src="/Wildlife-Portfolio/images/barredowl.jpg" alt="Mystery in the Pines"></a>
-    <a href="/Wildlife-Portfolio/images/barredinblackwm.jpg" data-lightbox="wildlife" data-title="Ghost on the Branch"><img src="/Wildlife-Portfolio/images/barredinblackwm.jpg" alt="Ghost on the Branch"></a>
-    <a href="/Wildlife-Portfolio/images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel"><img src="/Wildlife-Portfolio/images/redshoulder.jpg" alt="Forest Sentinel"></a>
-    <a href="/Wildlife-Portfolio/images/red.jpg" data-lightbox="wildlife" data-title="Red in the Rain"><img src="/Wildlife-Portfolio/images/red.jpg" alt="Red in the Rain"></a>
-    <a href="/Wildlife-Portfolio/images/yellow.jpg" data-lightbox="wildlife" data-title="Golden Whisper"><img src="/Wildlife-Portfolio/images/yellow.jpg" alt="Golden Whisper"></a>
-    <a href="/Wildlife-Portfolio/images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flight of Sunshine"><img src="/Wildlife-Portfolio/images/splashofyellow.jpg" alt="Flight of Sunshine"></a>
-    <a href="/Wildlife-Portfolio/images/blue.jpg" data-lightbox="wildlife" data-title="Song of the Woods"><img src="/Wildlife-Portfolio/images/blue.jpg" alt="Song of the Woods"></a>
-    <a href="/Wildlife-Portfolio/images/gullinsand.jpg" data-lightbox="wildlife" data-title="Saltwater Secrets"><img src="/Wildlife-Portfolio/images/gullinsand.jpg" alt="Saltwater Secrets"></a>
-    <a href="/Wildlife-Portfolio/images/solocrab.jpg" data-lightbox="wildlife" data-title="Tiny Titan"><img src="/Wildlife-Portfolio/images/solocrab.jpg" alt="Tiny Titan"></a>
+    <!-- Inserted Gallery Images Here -->
+    <a href="images/capesanblasmilkyway.jpg" data-lightbox="wildlife" data-title="Whispers of the Universe"><img src="images/capesanblasmilkyway.jpg" alt="Whispers of the Universe"></a>
+    <a href="images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch"><img src="images/deergazingatsunrise.jpg" alt="Morning Watch"></a>
+    <a href="images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith"><img src="images/deertakingoff.jpg" alt="Leap of Faith"></a>
+    <a href="images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer"><img src="images/deerinmeadow.jpg" alt="Golden Wanderer"></a>
+    <a href="images/doe.jpg" data-lightbox="wildlife" data-title="Curious Soul"><img src="images/doe.jpg" alt="Curious Soul"></a>
+    <a href="images/eagleperched.jpg" data-lightbox="wildlife" data-title="Noble Watcher"><img src="images/eagleperched.jpg" alt="Noble Watcher"></a>
+    <a href="images/Eaglesoaringwm.jpg" data-lightbox="wildlife" data-title="Soaring the Blue"><img src="images/Eaglesoaringwm.jpg" alt="Soaring the Blue"></a>
+    <a href="images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth"><img src="images/juvenileeagletakingoff.jpg" alt="Wings of Youth"></a>
+    <a href="images/juvenileeaglesoaring.jpg" data-lightbox="wildlife" data-title="Young Flight"><img src="images/juvenileeaglesoaring.jpg" alt="Young Flight"></a>
+    <a href="images/barredowl.jpg" data-lightbox="wildlife" data-title="Mystery in the Pines"><img src="images/barredowl.jpg" alt="Mystery in the Pines"></a>
+    <a href="images/barredinblackwm.jpg" data-lightbox="wildlife" data-title="Ghost on the Branch"><img src="images/barredinblackwm.jpg" alt="Ghost on the Branch"></a>
+    <a href="images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel"><img src="images/redshoulder.jpg" alt="Forest Sentinel"></a>
+    <a href="images/red.jpg" data-lightbox="wildlife" data-title="Red in the Rain"><img src="images/red.jpg" alt="Red in the Rain"></a>
+    <a href="images/yellow.jpg" data-lightbox="wildlife" data-title="Golden Whisper"><img src="images/yellow.jpg" alt="Golden Whisper"></a>
+    <a href="images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flight of Sunshine"><img src="images/splashofyellow.jpg" alt="Flight of Sunshine"></a>
+    <a href="images/blue.jpg" data-lightbox="wildlife" data-title="Song of the Woods"><img src="images/blue.jpg" alt="Song of the Woods"></a>
+    <a href="images/gullinsand.jpg" data-lightbox="wildlife" data-title="Saltwater Secrets"><img src="images/gullinsand.jpg" alt="Saltwater Secrets"></a>
+    <a href="images/solocrab.jpg" data-lightbox="wildlife" data-title="Tiny Titan"><img src="images/solocrab.jpg" alt="Tiny Titan"></a>
   </div>
 </section>
 
@@ -305,6 +245,7 @@ function toggleMenu() {
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
   document.querySelector('.topbar img').classList.add('loaded');
+  document.querySelectorAll('.gallery a').forEach(a => a.classList.add('visible'));
 });
 
 window.addEventListener('scroll', () => {
