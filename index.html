@@ -86,18 +86,24 @@
       height: 110vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 0 5%;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 12% 8%;
       color: white;
       text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
       background-attachment: fixed;
       position: relative;
       animation: zoomBackground 10s ease-out forwards;
-      text-align: center;
     }
 
     @keyframes zoomBackground { from { background-size: 100%; } to { background-size: 110%; } }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 2rem;
+    }
 
     .name-highlight {
       background: #FFF3B0;
@@ -107,7 +113,6 @@
       font-weight: 700;
       font-size: 4rem;
       color: white;
-      margin-bottom: 0.5rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
@@ -198,10 +203,31 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    @media (max-width: 768px) {
+      header {
+        align-items: center;
+        text-align: center;
+        padding: 15% 5%;
+      }
+
+      .header-text {
+        align-items: center;
+        margin-top: 3rem;
+      }
+
+      .name-highlight {
+        font-size: 3rem;
+      }
+
+      header p {
+        font-size: 2rem;
+      }
+    }
   </style>
 </head>
-<body>
 
+<body>
 <div class="topbar">
   <a href="#top"><img src="images/topbar-branch.png" alt="Gary Snyder Wildlife Photography Branch" style="max-height: 80px; object-fit: cover;"></a>
   <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
@@ -213,10 +239,12 @@
 </div>
 
 <header id="header">
-  <div class="name-highlight">
-    <span>Gary Snyder</span>
+  <div class="header-text">
+    <div class="name-highlight">
+      <span>Gary Snyder</span>
+    </div>
+    <p>Wildlife Photography</p>
   </div>
-  <p>Wildlife Photography</p>
   <div class="scroll-down">&#8595;</div>
 </header>
 
@@ -230,10 +258,27 @@
   </p>
 </section>
 
-<section id="gallery">
+<<section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <!-- Your images go here -->
+    <a href="images/capesanblasmilkyway.jpg" data-lightbox="wildlife" data-title="Whispers of the Universe"><img src="images/capesanblasmilkyway.jpg" alt="Whispers of the Universe"></a>
+    <a href="images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch"><img src="images/deergazingatsunrise.jpg" alt="Morning Watch"></a>
+    <a href="images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith"><img src="images/deertakingoff.jpg" alt="Leap of Faith"></a>
+    <a href="images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer"><img src="images/deerinmeadow.jpg" alt="Golden Wanderer"></a>
+    <a href="images/doe.jpg" data-lightbox="wildlife" data-title="Curious Soul"><img src="images/doe.jpg" alt="Curious Soul"></a>
+    <a href="images/eagleperched.jpg" data-lightbox="wildlife" data-title="Noble Watcher"><img src="images/eagleperched.jpg" alt="Noble Watcher"></a>
+    <a href="images/Eaglesoaringwm.jpg" data-lightbox="wildlife" data-title="Soaring the Blue"><img src="images/Eaglesoaringwm.jpg" alt="Soaring the Blue"></a>
+    <a href="images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth"><img src="images/juvenileeagletakingoff.jpg" alt="Wings of Youth"></a>
+    <a href="images/juvenileeaglesoaring.jpg" data-lightbox="wildlife" data-title="Young Flight"><img src="images/juvenileeaglesoaring.jpg" alt="Young Flight"></a>
+    <a href="images/barredowl.jpg" data-lightbox="wildlife" data-title="Mystery in the Pines"><img src="images/barredowl.jpg" alt="Mystery in the Pines"></a>
+    <a href="images/barredinblackwm.jpg" data-lightbox="wildlife" data-title="Ghost on the Branch"><img src="images/barredinblackwm.jpg" alt="Ghost on the Branch"></a>
+    <a href="images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel"><img src="images/redshoulder.jpg" alt="Forest Sentinel"></a>
+    <a href="images/red.jpg" data-lightbox="wildlife" data-title="Red in the Rain"><img src="images/red.jpg" alt="Red in the Rain"></a>
+    <a href="images/yellow.jpg" data-lightbox="wildlife" data-title="Golden Whisper"><img src="images/yellow.jpg" alt="Golden Whisper"></a>
+    <a href="images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flight of Sunshine"><img src="images/splashofyellow.jpg" alt="Flight of Sunshine"></a>
+    <a href="images/blue.jpg" data-lightbox="wildlife" data-title="Song of the Woods"><img src="images/blue.jpg" alt="Song of the Woods"></a>
+    <a href="images/gullinsand.jpg" data-lightbox="wildlife" data-title="Saltwater Secrets"><img src="images/gullinsand.jpg" alt="Saltwater Secrets"></a>
+    <a href="images/solocrab.jpg" data-lightbox="wildlife" data-title="Tiny Titan"><img src="images/solocrab.jpg" alt="Tiny Titan"></a>
   </div>
 </section>
 
@@ -249,6 +294,7 @@
   &copy; 2025 Gary Snyder Wildlife Photography | All Rights Reserved
 </footer>
 
+<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
 <script>
 function toggleMenu() {
@@ -276,7 +322,6 @@ window.addEventListener('scroll', () => {
   }
 });
 </script>
-
 </body>
 </html>
 
