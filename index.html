@@ -15,177 +15,53 @@
     body { margin: 0; font-family: 'Merriweather', serif; background: #f1f3f0; color: #2c3e50; line-height: 1.6; opacity: 0; transition: opacity 1.5s ease; }
     body.loaded { opacity: 1; }
 
-    .topbar {
-      background: #f5efe6;
-      padding: 0.5rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .topbar img {
-      max-height: 70px;
-      width: auto;
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-      transition: opacity 1.5s ease, transform 1.5s ease;
-    }
-
+    .topbar { background: #f5efe6; padding: 0.5rem 2rem; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; height: 80px; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .branch-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 120px; overflow: visible; z-index: 5; }
+    .topbar img { height: 120px; width: 100%; object-fit: cover; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 1.5s ease, transform 1.5s ease; }
     .topbar img.loaded { opacity: 1; transform: translateY(0) scale(1); }
-
     .topbar nav { display: flex; gap: 2rem; }
-
-    .topbar nav a {
-      color: #264d3c;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: color 0.3s ease;
-    }
-
+    .topbar nav a { color: #264d3c; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
     .topbar nav a:hover { color: #a7c957; }
-
     .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: #264d3c; }
 
     @media (max-width: 768px) {
       .topbar nav { display: none; flex-direction: column; background: #f5efe6; position: absolute; top: 80px; right: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
       .topbar nav.show { display: flex; }
       .menu-toggle { display: block; }
+      .branch-wrapper { height: 90px; }
+      .topbar img { height: 90px; }
     }
 
-    header {
-      background: url('images/barredinblack.jpg') no-repeat center center/cover;
-      height: 110vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: flex-start;
-      padding: 12% 8%;
-      color: white;
-      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-      background-attachment: fixed;
-      position: relative;
-      animation: zoomBackground 10s ease-out forwards;
-    }
-
+    header { background: url('images/barredinblack.jpg') no-repeat center center/cover; height: 110vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 12% 8%; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); background-attachment: fixed; position: relative; animation: zoomBackground 10s ease-out forwards; }
     @keyframes zoomBackground { from { background-size: 100%; } to { background-size: 110%; } }
-
     .header-text { display: flex; flex-direction: column; align-items: flex-start; margin-top: 2rem; }
-
-    .name-highlight {
-      background: #FFF3B0;
-      display: inline-block;
-      padding: 0.2em 0.6em;
-      font-family: 'Outfit', sans-serif;
-      font-weight: 700;
-      font-size: 4rem;
-      color: white;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
-    }
-
+    .name-highlight { background: #FFF3B0; display: inline-block; padding: 0.2em 0.6em; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 4rem; color: white; text-transform: uppercase; letter-spacing: 0.1em; text-shadow: 2px 2px 6px rgba(0,0,0,0.5); }
     header p { font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-top: 1rem; }
-
-    .scroll-down {
-      position: absolute;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2.5rem;
-      color: #000;
-      animation: smoothBounce 3s ease-in-out infinite;
-      transition: opacity 0.5s ease;
-    }
-
+    .scroll-down { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 2.5rem; color: #000; animation: smoothBounce 3s ease-in-out infinite; transition: opacity 0.5s ease; }
     .scroll-down.hide { opacity: 0; pointer-events: none; }
-
-    @keyframes smoothBounce {
-      0%, 100% { transform: translate(-50%, 0); }
-      50% { transform: translate(-50%, -10px); }
-    }
+    @keyframes smoothBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
 
     section { max-width: 1100px; margin: 4rem auto; padding: 0 20px; text-align: center; }
+    h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #264d3c; border-bottom: 2px solid #a7c957; display: inline-block; padding-bottom: 5px; }
 
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 1rem;
-      color: #264d3c;
-      border-bottom: 2px solid #a7c957;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 3rem 8%;
-    }
-
-    .gallery a {
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    .gallery .caption {
-      margin-top: 0.5rem;
-      font-size: 1rem;
-      font-weight: 500;
-      color: #264d3c;
-      text-align: center;
-    }
-
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 3rem 8%; }
+    .gallery-item { display: flex; flex-direction: column; align-items: center; }
+    .gallery img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.5s ease, box-shadow 0.5s ease; }
     .gallery a img { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
     .gallery a.visible img { opacity: 1; transform: translateY(0); }
     .gallery a:hover img { transform: scale(1.05); filter: brightness(1.1) contrast(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+    .caption { margin-top: 0.5rem; font-size: 1rem; color: #264d3c; text-align: center; }
 
-    .contact-info { font-size: 1.2rem; margin-top: 1rem; }
-
-    footer {
-      background: #264d3c;
-      color: #f1f3f0;
-      text-align: center;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      margin-top: 3rem;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 1s ease, transform 1s ease;
-    }
-
+    footer { background: #264d3c; color: #f1f3f0; text-align: center; padding: 1rem 0; font-size: 0.9rem; margin-top: 3rem; opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
     footer.visible { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 768px) {
-      header { align-items: center; text-align: center; padding: 15% 5%; }
-      .header-text { align-items: center; margin-top: 3rem; }
-      .name-highlight { font-size: 3rem; }
-      header p { font-size: 2rem; }
-    }
   </style>
 </head>
-
 <body>
-<!-- Topbar -->
+
 <div class="topbar">
-  <a href="#top"><img src="images/topbar-branch.png" alt="Gary Snyder Wildlife Photography Branch"></a>
+  <div class="branch-wrapper">
+    <img src="images/topbar-branch.png" alt="Gary Snyder Wildlife Photography Branch">
+  </div>
   <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
   <nav id="nav-links">
     <a href="#story">Story</a>
@@ -194,7 +70,6 @@
   </nav>
 </div>
 
-<!-- Header -->
 <header id="header">
   <div class="header-text">
     <div class="name-highlight">
@@ -205,63 +80,35 @@
   <div class="scroll-down">&#8595;</div>
 </header>
 
-<!-- Main Sections -->
 <section id="story">
   <h2>My Story</h2>
-  <p>As a kid, nature was everything... (shortened for this response)</p>
+  <p>As a kid, nature was everything. I wandered creeks, built dams, and watched animals with wide-eyed wonder.<br><br>Wildlife photography brought it all back.<br><br>Through my lens, I reconnect with the raw beauty of the world — the honesty of an eagle's flight, the quiet resilience of a deer at dawn, the delicate power of a bear in a river.<br><br>I didn't outgrow that wild spirit. I grew back into it.</p>
 </section>
 
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <!-- Full gallery inserted (shortened here) -->
+    <!-- FULL GALLERY -->
+    <div class="gallery-item"><a href="images/eagleperched.jpg" data-lightbox="wildlife" data-title="Majestic Watch: Bald Eagle Standing Guard"><img src="images/eagleperched.jpg" alt="Majestic Watch"></a><div class="caption">Majestic Watch: Bald Eagle Standing Guard</div></div>
+    <div class="gallery-item"><a href="images/Eaglesoaring.jpg" data-lightbox="wildlife" data-title="Freedom Flight: Bald Eagle in Full Soar"><img src="images/Eaglesoaring.jpg" alt="Freedom Flight"></a><div class="caption">Freedom Flight: Bald Eagle in Full Soar</div></div>
+    <div class="gallery-item"><a href="images/eagleperchedinshade.jpg" data-lightbox="wildlife" data-title="Regal Shadow: Eagle Resting Among Pines"><img src="images/eagleperchedinshade.jpg" alt="Regal Shadow"></a><div class="caption">Regal Shadow: Eagle Resting Among Pines</div></div>
+    <div class="gallery-item"><a href="images/barredinblack.jpg" data-lightbox="wildlife" data-title="Silent Watcher: Barred Owl in Darkness"><img src="images/barredinblack.jpg" alt="Silent Watcher"></a><div class="caption">Silent Watcher: Barred Owl in Darkness</div></div>
+    <div class="gallery-item"><a href="images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel: Red-Shouldered Hawk"><img src="images/redshoulder.jpg" alt="Forest Sentinel"></a><div class="caption">Forest Sentinel: Red-Shouldered Hawk</div></div>
+    <div class="gallery-item"><a href="images/blue.jpg" data-lightbox="wildlife" data-title="Gentle Guard: Eastern Bluebird at the Tree Line"><img src="images/blue.jpg" alt="Gentle Guard"></a><div class="caption">Gentle Guard: Eastern Bluebird at the Tree Line</div></div>
+    <div class="gallery-item"><a href="images/yellow.jpg" data-lightbox="wildlife" data-title="Bright Spirit: Goldfinch on a Frosty Branch"><img src="images/yellow.jpg" alt="Bright Spirit"></a><div class="caption">Bright Spirit: Goldfinch on a Frosty Branch</div></div>
+    <div class="gallery-item"><a href="images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flash of Sunshine: Goldfinch in Winter's Grasp"><img src="images/splashofyellow.jpg" alt="Flash of Sunshine"></a><div class="caption">Flash of Sunshine: Goldfinch in Winter's Grasp</div></div>
+    <div class="gallery-item"><a href="images/red.jpg" data-lightbox="wildlife" data-title="Winter Flame: Cardinal Among Bare Branches"><img src="images/red.jpg" alt="Winter Flame"></a><div class="caption">Winter Flame: Cardinal Among Bare Branches</div></div>
+    <div class="gallery-item"><a href="images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch: Deer Greeting the Sunrise"><img src="images/deergazingatsunrise.jpg" alt="Morning Watch"></a><div class="caption">Morning Watch: Deer Greeting the Sunrise</div></div>
+    <div class="gallery-item"><a href="images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer: Deer in the Meadow Haze"><img src="images/deerinmeadow.jpg" alt="Golden Wanderer"></a><div class="caption">Golden Wanderer: Deer in the Meadow Haze</div></div>
+    <div class="gallery-item"><a href="images/doe.jpg" data-lightbox="wildlife" data-title="Innocence: A Young Doe in Open Fields"><img src="images/doe.jpg" alt="Innocence"></a><div class="caption">Innocence: A Young Doe in Open Fields</div></div>
+    <div class="gallery-item"><a href="images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith: Deer Dashing Across the Water"><img src="images/deertakingoff.jpg" alt="Leap of Faith"></a><div class="caption">Leap of Faith: Deer Dashing Across the Water</div></div>
+    <div class="gallery-item"><a href="images/gullinsand.jpg" data-lightbox="wildlife" data-title="Shoreline Seeker: Gull foraging the tides"><img src="images/gullinsand.jpg" alt="Shoreline Seeker"></a><div class="caption">Shoreline Seeker: Gull foraging the tides</div></div>
+    <div class="gallery-item"><a href="images/gullshunting.jpg" data-lightbox="wildlife" data-title="Coastal Dance: Gulls Hunting at Dawn"><img src="images/gullshunting.jpg" alt="Coastal Dance"></a><div class="caption">Coastal Dance: Gulls Hunting at Dawn</div></div>
+    <div class="gallery-item"><a href="images/squirrelgaze.jpg" data-lightbox="wildlife" data-title="Perched and Poised: Squirrel on Woodland Throne"><img src="images/squirrelgaze.jpg" alt="Perched and Poised"></a><div class="caption">Perched and Poised: Squirrel on Woodland Throne</div></div>
+    <div class="gallery-item"><a href="images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth: Juvenile Eagle Taking Flight"><img src="images/juvenileeagletakingoff.jpg" alt="Wings of Youth"></a><div class="caption">Wings of Youth: Juvenile Eagle Taking Flight</div></div>
+    <div class="gallery-item"><a href="images/sunsetatthecape.jpg" data-lightbox="wildlife" data-title="Last Light: Sunset at the Cape"><img src="images/sunsetatthecape.jpg" alt="Last Light"></a><div class="caption">Last Light: Sunset at the Cape</div></div>
   </div>
 </section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p class="contact-info">
-    Interested in prints, licensing, or collaboration?<br>
-    Reach out: <a href="mailto:GarySnyderWildlifePhotography@gmail.com">GarySnyderWildlifePhotography@gmail.com</a>
-  </p>
-</section>
-
-<!-- Footer -->
-<footer id="footer">
-  &copy; 2025 Gary Snyder Wildlife Photography | All Rights Reserved
-</footer>
-
-<!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
-<script>
-function toggleMenu() {
-  const nav = document.getElementById('nav-links');
-  nav.classList.toggle('show');
-}
-
-window.addEventListener('load', () => {
-  document.body.classList.add('loaded');
-  document.querySelector('.topbar img').classList.add('loaded');
-  document.querySelectorAll('.gallery a').forEach(a => a.classList.add('visible'));
-});
-
-window.addEventListener('scroll', () => {
-  const scrollDownArrow = document.querySelector('.scroll-down');
-  if (window.scrollY > 50) {
-    scrollDownArrow.classList.add('hide');
-  } else {
-    scrollDownArrow.classList.remove('hide');
-  }
-
-  const footer = document.getElementById('footer');
-  const footerRect = footer.getBoundingClientRect();
-  if (footerRect.top < window.innerHeight) {
-    footer.classList.add('visible');
-  }
-});
-</script>
-</body>
-</html>
 
 
 
