@@ -7,7 +7,7 @@
 
   <!-- Lightbox2 CSS -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet" />
-  
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Great+Vibes&family=Outfit:wght@700&display=swap');
 
@@ -17,8 +17,8 @@
 
     .topbar { background: #f5efe6; padding: 0.5rem 2rem; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; height: 80px; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
     .branch-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 120px; overflow: visible; z-index: 5; }
-    .topbar img { height: 120px; width: 100%; object-fit: cover; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 1.5s ease, transform 1.5s ease; }
-    .topbar img.loaded { opacity: 1; transform: translateY(0) scale(1); }
+    .branch-wrapper img { height: 120px; width: 100%; object-fit: cover; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 1.5s ease, transform 1.5s ease; }
+    .branch-wrapper img.loaded { opacity: 1; transform: translateY(0) scale(1); }
     .topbar nav { display: flex; gap: 2rem; }
     .topbar nav a { color: #264d3c; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
     .topbar nav a:hover { color: #a7c957; }
@@ -29,7 +29,7 @@
       .topbar nav.show { display: flex; }
       .menu-toggle { display: block; }
       .branch-wrapper { height: 90px; }
-      .topbar img { height: 90px; }
+      .branch-wrapper img { height: 90px; }
     }
 
     header { background: url('images/barredinblack.jpg') no-repeat center center/cover; height: 110vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 12% 8%; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); background-attachment: fixed; position: relative; animation: zoomBackground 10s ease-out forwards; }
@@ -56,7 +56,6 @@
     footer.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-
 <body>
 
 <!-- Topbar -->
@@ -72,7 +71,6 @@
   </nav>
 </div>
 
-<!-- Header -->
 <header id="header">
   <div class="header-text">
     <div class="name-highlight"><span>Gary Snyder</span></div>
@@ -91,130 +89,35 @@
 <section id="gallery">
   <h2>Gallery</h2>
   <div class="gallery">
-    <div class="gallery-item">
-      <a href="images/eagleperched.jpg" data-lightbox="wildlife" data-title="Majestic Watch: Bald Eagle Standing Guard">
-        <img src="images/eagleperched.jpg" alt="Majestic Watch">
-      </a>
-      <div class="caption">Majestic Watch: Bald Eagle Standing Guard</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/Eaglesoaring.jpg" data-lightbox="wildlife" data-title="Freedom Flight: Bald Eagle in Full Soar">
-        <img src="images/Eaglesoaring.jpg" alt="Freedom Flight">
-      </a>
-      <div class="caption">Freedom Flight: Bald Eagle in Full Soar</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/eagleperchedinshade.jpg" data-lightbox="wildlife" data-title="Regal Shadow: Eagle Resting Among Pines">
-        <img src="images/eagleperchedinshade.jpg" alt="Regal Shadow">
-      </a>
-      <div class="caption">Regal Shadow: Eagle Resting Among Pines</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/barredinblack.jpg" data-lightbox="wildlife" data-title="Silent Watcher: Barred Owl in Darkness">
-        <img src="images/barredinblack.jpg" alt="Silent Watcher">
-      </a>
-      <div class="caption">Silent Watcher: Barred Owl in Darkness</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel: Red-Shouldered Hawk">
-        <img src="images/redshoulder.jpg" alt="Forest Sentinel">
-      </a>
-      <div class="caption">Forest Sentinel: Red-Shouldered Hawk</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/blue.jpg" data-lightbox="wildlife" data-title="Gentle Guard: Eastern Bluebird at the Tree Line">
-        <img src="images/blue.jpg" alt="Gentle Guard">
-      </a>
-      <div class="caption">Gentle Guard: Eastern Bluebird at the Tree Line</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/yellow.jpg" data-lightbox="wildlife" data-title="Bright Spirit: Goldfinch on a Frosty Branch">
-        <img src="images/yellow.jpg" alt="Bright Spirit">
-      </a>
-      <div class="caption">Bright Spirit: Goldfinch on a Frosty Branch</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flash of Sunshine: Goldfinch in Winter's Grasp">
-        <img src="images/splashofyellow.jpg" alt="Flash of Sunshine">
-      </a>
-      <div class="caption">Flash of Sunshine: Goldfinch in Winter's Grasp</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/red.jpg" data-lightbox="wildlife" data-title="Winter Flame: Cardinal Among Bare Branches">
-        <img src="images/red.jpg" alt="Winter Flame">
-      </a>
-      <div class="caption">Winter Flame: Cardinal Among Bare Branches</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch: Deer Greeting the Sunrise">
-        <img src="images/deergazingatsunrise.jpg" alt="Morning Watch">
-      </a>
-      <div class="caption">Morning Watch: Deer Greeting the Sunrise</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer: Deer in the Meadow Haze">
-        <img src="images/deerinmeadow.jpg" alt="Golden Wanderer">
-      </a>
-      <div class="caption">Golden Wanderer: Deer in the Meadow Haze</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/doe.jpg" data-lightbox="wildlife" data-title="Innocence: A Young Doe in Open Fields">
-        <img src="images/doe.jpg" alt="Innocence">
-      </a>
-      <div class="caption">Innocence: A Young Doe in Open Fields</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith: Deer Dashing Across the Water">
-        <img src="images/deertakingoff.jpg" alt="Leap of Faith">
-      </a>
-      <div class="caption">Leap of Faith: Deer Dashing Across the Water</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/gullinsand.jpg" data-lightbox="wildlife" data-title="Shoreline Seeker: Gull foraging the tides">
-        <img src="images/gullinsand.jpg" alt="Shoreline Seeker">
-      </a>
-      <div class="caption">Shoreline Seeker: Gull foraging the tides</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/gullshunting.jpg" data-lightbox="wildlife" data-title="Coastal Dance: Gulls Hunting at Dawn">
-        <img src="images/gullshunting.jpg" alt="Coastal Dance">
-      </a>
-      <div class="caption">Coastal Dance: Gulls Hunting at Dawn</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/squirrelgaze.jpg" data-lightbox="wildlife" data-title="Perched and Poised: Squirrel on Woodland Throne">
-        <img src="images/squirrelgaze.jpg" alt="Perched and Poised">
-      </a>
-      <div class="caption">Perched and Poised: Squirrel on Woodland Throne</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth: Juvenile Eagle Taking Flight">
-        <img src="images/juvenileeagletakingoff.jpg" alt="Wings of Youth">
-      </a>
-      <div class="caption">Wings of Youth: Juvenile Eagle Taking Flight</div>
-    </div>
-    <div class="gallery-item">
-      <a href="images/sunsetatthecape.jpg" data-lightbox="wildlife" data-title="Last Light: Sunset at the Cape">
-        <img src="images/sunsetatthecape.jpg" alt="Last Light">
-      </a>
-      <div class="caption">Last Light: Sunset at the Cape</div>
-    </div>
+    <div class="gallery-item"><a href="images/eagleperched.jpg" data-lightbox="wildlife" data-title="Majestic Watch: Bald Eagle Standing Guard"><img src="images/eagleperched.jpg" alt="Majestic Watch"></a><div class="caption">Majestic Watch: Bald Eagle Standing Guard</div></div>
+    <div class="gallery-item"><a href="images/Eaglesoaring.jpg" data-lightbox="wildlife" data-title="Freedom Flight: Bald Eagle in Full Soar"><img src="images/Eaglesoaring.jpg" alt="Freedom Flight"></a><div class="caption">Freedom Flight: Bald Eagle in Full Soar</div></div>
+    <div class="gallery-item"><a href="images/eagleperchedinshade.jpg" data-lightbox="wildlife" data-title="Regal Shadow: Eagle Resting Among Pines"><img src="images/eagleperchedinshade.jpg" alt="Regal Shadow"></a><div class="caption">Regal Shadow: Eagle Resting Among Pines</div></div>
+    <div class="gallery-item"><a href="images/barredinblack.jpg" data-lightbox="wildlife" data-title="Silent Watcher: Barred Owl in Darkness"><img src="images/barredinblack.jpg" alt="Silent Watcher"></a><div class="caption">Silent Watcher: Barred Owl in Darkness</div></div>
+    <div class="gallery-item"><a href="images/redshoulder.jpg" data-lightbox="wildlife" data-title="Forest Sentinel: Red-Shouldered Hawk"><img src="images/redshoulder.jpg" alt="Forest Sentinel"></a><div class="caption">Forest Sentinel: Red-Shouldered Hawk</div></div>
+    <div class="gallery-item"><a href="images/blue.jpg" data-lightbox="wildlife" data-title="Gentle Guard: Eastern Bluebird at the Tree Line"><img src="images/blue.jpg" alt="Gentle Guard"></a><div class="caption">Gentle Guard: Eastern Bluebird at the Tree Line</div></div>
+    <div class="gallery-item"><a href="images/yellow.jpg" data-lightbox="wildlife" data-title="Bright Spirit: Goldfinch on a Frosty Branch"><img src="images/yellow.jpg" alt="Bright Spirit"></a><div class="caption">Bright Spirit: Goldfinch on a Frosty Branch</div></div>
+    <div class="gallery-item"><a href="images/splashofyellow.jpg" data-lightbox="wildlife" data-title="Flash of Sunshine: Goldfinch in Winter's Grasp"><img src="images/splashofyellow.jpg" alt="Flash of Sunshine"></a><div class="caption">Flash of Sunshine: Goldfinch in Winter's Grasp</div></div>
+    <div class="gallery-item"><a href="images/red.jpg" data-lightbox="wildlife" data-title="Winter Flame: Cardinal Among Bare Branches"><img src="images/red.jpg" alt="Winter Flame"></a><div class="caption">Winter Flame: Cardinal Among Bare Branches</div></div>
+    <div class="gallery-item"><a href="images/deergazingatsunrise.jpg" data-lightbox="wildlife" data-title="Morning Watch: Deer Greeting the Sunrise"><img src="images/deergazingatsunrise.jpg" alt="Morning Watch"></a><div class="caption">Morning Watch: Deer Greeting the Sunrise</div></div>
+    <div class="gallery-item"><a href="images/deerinmeadow.jpg" data-lightbox="wildlife" data-title="Golden Wanderer: Deer in the Meadow Haze"><img src="images/deerinmeadow.jpg" alt="Golden Wanderer"></a><div class="caption">Golden Wanderer: Deer in the Meadow Haze</div></div>
+    <div class="gallery-item"><a href="images/doe.jpg" data-lightbox="wildlife" data-title="Innocence: A Young Doe in Open Fields"><img src="images/doe.jpg" alt="Innocence"></a><div class="caption">Innocence: A Young Doe in Open Fields</div></div>
+    <div class="gallery-item"><a href="images/deertakingoff.jpg" data-lightbox="wildlife" data-title="Leap of Faith: Deer Dashing Across the Water"><img src="images/deertakingoff.jpg" alt="Leap of Faith"></a><div class="caption">Leap of Faith: Deer Dashing Across the Water</div></div>
+    <div class="gallery-item"><a href="images/gullinsand.jpg" data-lightbox="wildlife" data-title="Shoreline Seeker: Gull Foraging the Tides"><img src="images/gullinsand.jpg" alt="Shoreline Seeker"></a><div class="caption">Shoreline Seeker: Gull Foraging the Tides</div></div>
+    <div class="gallery-item"><a href="images/gullshunting.jpg" data-lightbox="wildlife" data-title="Coastal Dance: Gulls Hunting at Dawn"><img src="images/gullshunting.jpg" alt="Coastal Dance"></a><div class="caption">Coastal Dance: Gulls Hunting at Dawn</div></div>
+    <div class="gallery-item"><a href="images/squirrelgaze.jpg" data-lightbox="wildlife" data-title="Perched and Poised: Squirrel on Woodland Throne"><img src="images/squirrelgaze.jpg" alt="Perched and Poised"></a><div class="caption">Perched and Poised: Squirrel on Woodland Throne</div></div>
+    <div class="gallery-item"><a href="images/juvenileeagletakingoff.jpg" data-lightbox="wildlife" data-title="Wings of Youth: Juvenile Eagle Taking Flight"><img src="images/juvenileeagletakingoff.jpg" alt="Wings of Youth"></a><div class="caption">Wings of Youth: Juvenile Eagle Taking Flight</div></div>
+    <div class="gallery-item"><a href="images/sunsetatthecape.jpg" data-lightbox="wildlife" data-title="Last Light: Sunset at the Cape"><img src="images/sunsetatthecape.jpg" alt="Last Light"></a><div class="caption">Last Light: Sunset at the Cape</div></div>
   </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
   <h2>Contact</h2>
-  <p class="contact-info">
-    Interested in prints, licensing, or collaboration?<br>
-    Reach out: <a href="mailto:GarySnyderWildlifePhotography@gmail.com">GarySnyderWildlifePhotography@gmail.com</a>
-  </p>
+  <p class="contact-info">Interested in prints, licensing, or collaboration?<br>Reach out: <a href="mailto:GarySnyderWildlifePhotography@gmail.com">GarySnyderWildlifePhotography@gmail.com</a></p>
 </section>
 
 <!-- Footer -->
-<footer id="footer">
-  &copy; 2025 Gary Snyder Wildlife Photography | All Rights Reserved
-</footer>
+<footer id="footer">&copy; 2025 Gary Snyder Wildlife Photography | All Rights Reserved</footer>
 
 <!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
@@ -225,25 +128,17 @@ function toggleMenu() {
 }
 window.addEventListener('load', () => {
   document.body.classList.add('loaded');
-  document.querySelector('.topbar img').classList.add('loaded');
+  document.querySelector('.branch-wrapper img').classList.add('loaded');
   document.querySelectorAll('.gallery a').forEach(a => a.classList.add('visible'));
 });
 window.addEventListener('scroll', () => {
   const scrollDownArrow = document.querySelector('.scroll-down');
-  if (window.scrollY > 50) {
-    scrollDownArrow.classList.add('hide');
-  } else {
-    scrollDownArrow.classList.remove('hide');
-  }
+  if (window.scrollY > 50) { scrollDownArrow.classList.add('hide'); } else { scrollDownArrow.classList.remove('hide'); }
   const footer = document.getElementById('footer');
   const footerRect = footer.getBoundingClientRect();
-  if (footerRect.top < window.innerHeight) {
-    footer.classList.add('visible');
-  }
+  if (footerRect.top < window.innerHeight) { footer.classList.add('visible'); }
 });
 </script>
 
 </body>
 </html>
-
-
