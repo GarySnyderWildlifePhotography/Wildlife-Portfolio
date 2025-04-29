@@ -15,45 +15,159 @@
     body { margin: 0; font-family: 'Merriweather', serif; background: #f1f3f0; color: #2c3e50; line-height: 1.6; opacity: 0; transition: opacity 1.5s ease; }
     body.loaded { opacity: 1; }
 
-    .topbar { background: #f5efe6; padding: 0.5rem 2rem; display: flex; justify-content: flex-end; align-items: center; position: sticky; top: 0; height: 80px; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-    .branch-wrapper { position: absolute; top: 0; left: 0; width: 100%; height: 120px; overflow: visible; z-index: 5; }
-    .topbar img { height: 120px; width: 100%; object-fit: cover; opacity: 0; transform: translateY(20px) scale(0.95); transition: opacity 1.5s ease, transform 1.5s ease; }
-    .topbar img.loaded { opacity: 1; transform: translateY(0) scale(1); }
-    .topbar nav { display: flex; gap: 2rem; }
-    .topbar nav a { color: #264d3c; text-decoration: none; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; }
-    .topbar nav a:hover { color: #a7c957; }
-    .menu-toggle { display: none; font-size: 2rem; cursor: pointer; color: #264d3c; }
-
-    @media (max-width: 768px) {
-      .topbar nav { display: none; flex-direction: column; background: #f5efe6; position: absolute; top: 80px; right: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
-      .topbar nav.show { display: flex; }
-      .menu-toggle { display: block; }
-      .branch-wrapper { height: 90px; }
-      .topbar img { height: 90px; }
+    .topbar {
+      background: #f5efe6;
+      padding: 0.5rem 2rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      height: 80px;
+      z-index: 10;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    header { background: url('images/barredinblack.jpg') no-repeat center center/cover; height: 110vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: flex-start; padding: 12% 8%; color: white; text-shadow: 2px 2px 10px rgba(0,0,0,0.8); background-attachment: fixed; position: relative; animation: zoomBackground 10s ease-out forwards; }
-    @keyframes zoomBackground { from { background-size: 100%; } to { background-size: 110%; } }
-    .header-text { display: flex; flex-direction: column; align-items: flex-start; margin-top: 2rem; }
-    .name-highlight { background: #FFF3B0; display: inline-block; padding: 0.2em 0.6em; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 4rem; color: white; text-transform: uppercase; letter-spacing: 0.1em; text-shadow: 2px 2px 6px rgba(0,0,0,0.5); }
-    header p { font-family: 'Great Vibes', cursive; font-size: 2.5rem; margin-top: 1rem; }
-    .scroll-down { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); font-size: 2.5rem; color: #000; animation: smoothBounce 3s ease-in-out infinite; transition: opacity 0.5s ease; }
-    .scroll-down.hide { opacity: 0; pointer-events: none; }
-    @keyframes smoothBounce { 0%, 100% { transform: translate(-50%, 0); } 50% { transform: translate(-50%, -10px); } }
+    .branch-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      overflow: visible;
+      z-index: 5;
+      pointer-events: none;
+    }
 
-    section { max-width: 1100px; margin: 4rem auto; padding: 0 20px; text-align: center; }
-    h2 { font-size: 2.2rem; margin-bottom: 1rem; color: #264d3c; border-bottom: 2px solid #a7c957; display: inline-block; padding-bottom: 5px; }
+    .branch-wrapper img {
+      width: 100%;
+      height: auto;
+      max-height: 120px;
+      object-fit: contain;
+      opacity: 0;
+      transform: translateY(20px) scale(0.95);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
 
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; padding: 3rem 8%; }
-    .gallery-item { display: flex; flex-direction: column; align-items: center; }
-    .gallery img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); transition: transform 0.5s ease, box-shadow 0.5s ease; }
-    .gallery a img { opacity: 0; transform: translateY(20px); transition: opacity 1s ease, transform 1s ease; }
-    .gallery a.visible img { opacity: 1; transform: translateY(0); }
-    .gallery a:hover img { transform: scale(1.05); filter: brightness(1.1) contrast(1.1); box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
-    .caption { margin-top: 0.5rem; font-size: 1rem; color: #264d3c; text-align: center; }
+    .branch-wrapper img.loaded {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
 
-    footer { background: #264d3c; color: #f1f3f0; text-align: center; padding: 1rem 0; font-size: 0.9rem; margin-top: 3rem; opacity: 0; transform: translateY(30px); transition: opacity 1s ease, transform 1s ease; }
-    footer.visible { opacity: 1; transform: translateY(0); }
+    .topbar nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .topbar nav a {
+      color: #264d3c;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+    }
+
+    .topbar nav a:hover {
+      color: #a7c957;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: #264d3c;
+    }
+
+    @media (max-width: 768px) {
+      .topbar nav {
+        display: none;
+        flex-direction: column;
+        background: #f5efe6;
+        position: absolute;
+        top: 80px;
+        right: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      }
+      .topbar nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .branch-wrapper img {
+        max-height: 90px;
+      }
+    }
+
+    header {
+      background: url('images/barredinblack.jpg') no-repeat center center/cover;
+      height: 110vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 12% 8%;
+      color: white;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+      background-attachment: fixed;
+      position: relative;
+      animation: zoomBackground 10s ease-out forwards;
+    }
+
+    @keyframes zoomBackground {
+      from { background-size: 100%; }
+      to { background-size: 110%; }
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-top: 2rem;
+    }
+
+    .name-highlight {
+      background: #FFF3B0;
+      display: inline-block;
+      padding: 0.2em 0.6em;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      font-size: 4rem;
+      color: white;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-family: 'Great Vibes', cursive;
+      font-size: 2.5rem;
+      margin-top: 1rem;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.5rem;
+      color: #000;
+      animation: smoothBounce 3s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+
+    .scroll-down.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes smoothBounce {
+      0%, 100% { transform: translate(-50%, 0); }
+      50% { transform: translate(-50%, -10px); }
+    }
   </style>
 </head>
 
